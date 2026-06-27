@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Grampians Hockey Club - Grampians Pumas Design System
+   Brand Colors: Forest Green, Deep Purple, Ivory, Warm Gold
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Base backgrounds */
+    --background: 45 60% 97%;
+    --foreground: 150 25% 20%;
+
+    /* Card surfaces */
+    --card: 45 50% 95%;
+    --card-foreground: 150 25% 20%;
+
+    /* Popover surfaces */
+    --popover: 45 60% 97%;
+    --popover-foreground: 150 25% 20%;
+
+    /* Primary: Deep Forest Green #014421 */
+    --primary: 149 97% 14%;
+    --primary-foreground: 45 60% 97%;
+
+    /* Secondary: Electric Purple #b000eb */
+    --secondary: 285 100% 46%;
+    --secondary-foreground: 45 60% 97%;
+
+    /* Muted elements */
+    --muted: 45 30% 90%;
+    --muted-foreground: 150 15% 40%;
+
+    /* Accent: Electric Purple */
+    --accent: 285 100% 46%;
+    --accent-foreground: 45 60% 97%;
+
+    /* Destructive states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 60% 97%;
+
+    /* Borders and inputs */
+    --border: 150 15% 80%;
+    --input: 150 15% 85%;
+    --ring: 149 97% 14%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar - matches primary theme */
+    --sidebar-background: 149 97% 14%;
+    --sidebar-foreground: 45 60% 97%;
+    --sidebar-primary: 45 60% 97%;
+    --sidebar-primary-foreground: 149 97% 14%;
+    --sidebar-accent: 149 90% 22%;
+    --sidebar-accent-foreground: 45 60% 97%;
+    --sidebar-border: 149 80% 20%;
+    --sidebar-ring: 285 100% 46%;
+
+    /* Custom brand tokens */
+    --forest: 149 97% 14%;
+    --forest-light: 149 90% 22%;
+    --purple: 285 100% 46%;
+    --purple-light: 285 90% 58%;
+    --ivory: 45 60% 97%;
+    --ivory-dark: 45 40% 92%;
+    --gold: 40 65% 48%;
+    --gold-light: 40 70% 58%;
+  }
+
+  .dark {
+    --background: 150 30% 8%;
+    --foreground: 45 50% 95%;
+
+    --card: 150 25% 12%;
+    --card-foreground: 45 50% 95%;
+
+    --popover: 150 25% 12%;
+    --popover-foreground: 45 50% 95%;
+
+    --primary: 149 80% 45%;
+    --primary-foreground: 149 97% 8%;
+
+    --secondary: 285 85% 55%;
+    --secondary-foreground: 45 60% 97%;
+
+    --muted: 150 20% 18%;
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 285 85% 55%;
+    --accent-foreground: 45 60% 97%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 45 60% 97%;
+
+    --border: 150 20% 22%;
+    --input: 150 20% 22%;
+    --ring: 149 80% 45%;
+
+    --sidebar-background: 149 90% 10%;
+    --sidebar-foreground: 45 50% 95%;
+    --sidebar-primary: 149 80% 45%;
+    --sidebar-primary-foreground: 149 97% 8%;
+    --sidebar-accent: 149 70% 18%;
+    --sidebar-accent-foreground: 45 50% 95%;
+    --sidebar-border: 149 60% 22%;
+    --sidebar-ring: 285 85% 55%;
+
+    --forest: 149 80% 35%;
+    --forest-light: 149 70% 45%;
+    --purple: 285 85% 55%;
+    --purple-light: 285 80% 65%;
+    --ivory: 45 50% 95%;
+    --ivory-dark: 45 30% 85%;
+    --gold: 40 45% 55%;
+    --gold-light: 40 50% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--forest)) 0%,
+      hsl(var(--forest-light)) 50%,
+      hsl(var(--purple)) 100%
+    );
+  }
+
+  .bg-section-alt {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--ivory-dark)) 0%,
+      hsl(var(--ivory)) 100%
+    );
+  }
+}
